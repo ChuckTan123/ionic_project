@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      IoT Controller
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <div style="width: 100%; height: 400px;" [ngStyle]="{'background-color': getRGB() }"></div>
+  </ion-list>
+  <ion-list>
+    <ion-list-header style="background: #ffefba;
+  background: -webkit-linear-gradient(to left, #ffefba, #ffffff);
+  background: linear-gradient(to left, #ffefba, #ffffff);">
+      LIGHT <ion-badge style="background-color: #000000;" item-end>{{light}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="5" [(ngModel)]="light" color="secondary" debounce="200"
+                 (ionChange)="onSliderChanged('light', light)"> <!-- Add (ionChange) output to call controller function -->
+        <ion-icon range-left small name="sunny"></ion-icon>
+        <ion-icon range-right name="sunny"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+  <ion-list-header style="background: #40e0d0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #40e0d0, #ff8c00, #ff0080);
+  background: linear-gradient(to right, #40e0d0, #ff8c00, #ff0080);">
+    COLOR <ion-badge style="background-color: #000000;" item-end>{{COLOR}}</ion-badge>
+  </ion-list-header>
+  <ion-item>
+    <ion-range min="0" max="5" [(ngModel)]="color" color="secondary" debounce="200"
+               (ionChange)="onSliderChanged('color', color)"> <!-- Add (ionChange) output to call controller function -->
+      <ion-icon range-left small name="sunny"></ion-icon>
+      <ion-icon range-right name="sunny"></ion-icon>
+    </ion-range>
+  </ion-item>
+ </ion-list>
+
+</ion-content>

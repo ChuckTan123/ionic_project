@@ -1,13 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
-
+import { HttpModule } from '@angular/http';  // DECLARE https
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
-
+import { IoT} from '../pages/IoT/IoT'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { RGB } from '../pages/RGB/RGB'
 
 @Component({
   templateUrl: 'app.html'
@@ -30,7 +30,9 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'First List', component: ListPage },
+      { title: 'IoT', component: IoT },
+      { title: 'RGB', component: RGB }
     ];
   }
 
